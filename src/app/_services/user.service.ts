@@ -1,12 +1,14 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { ConfigService } from './config.service';
 import { User } from '@/_models';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    public apiUrl = 'http://localhost/covid-slayer';
-    constructor(private http: HttpClient) { }
+    apiUrl = '';
+    constructor(private http: HttpClient, private config: ConfigService) { 
+        this.apiUrl = this.config.apiUrl;
+    }
 
     getUser() {
         return this.http.get<User[]>(`${this.apiUrl}/users/getUser.json`);

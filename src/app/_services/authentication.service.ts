@@ -2,16 +2,16 @@
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { ConfigService } from './config.service';
 import { User } from '@/_models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
-    public apiUrl = 'http://localhost/covid-slayer';
-
-    constructor(private http: HttpClient) {
+    public apiUrl = '';
+    constructor(private http: HttpClient, private config: ConfigService) { 
+        this.apiUrl = this.config.apiUrl;
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('accessToken')));
         this.currentUser = this.currentUserSubject.asObservable();
     }

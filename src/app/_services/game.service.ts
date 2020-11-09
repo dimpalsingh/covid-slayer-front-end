@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { ConfigService } from './config.service';
+
 @Injectable({ providedIn: 'root' })
 export class GameService {
-    public apiUrl = 'http://localhost/covid-slayer';
-    constructor(private http: HttpClient) { }
+    apiUrl = '';
+    constructor(private http: HttpClient, private config: ConfigService) { 
+        this.apiUrl = this.config.apiUrl;
+    }
 
     getActiveSession() {
         return this.http.get(`${this.apiUrl}/game/getActiveSession.json`);
