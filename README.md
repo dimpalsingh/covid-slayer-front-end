@@ -1,5 +1,6 @@
-# angular-8-registration-login-example
+# Covid Slayer Game
 
-Angular 8 User Registration and Login Example with Webpack 4
-
-Full tutorial with example available at https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-example-tutorial
+Steps to install
+-Download and install latest version of node from https://nodejs.org/en/download/
+-npm install
+-npm start
