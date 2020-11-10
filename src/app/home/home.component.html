@@ -50,11 +50,11 @@
                     <span class="spinner-border spinner-border-sm mr-1" *ngIf="currentMonsterAction === 1"></span>
                     Attack
                 </button>
-                <button [disabled]="monsterPerformingAction && (gameConfig.max_blast_count - gameSessionObj.monster_current_blast_count <= 0)" class="btn btn-primary ml-3">
+                <button [disabled]="monsterPerformingAction || (gameConfig.max_blast_count - gameSessionObj.monster_current_blast_count <= 0)" class="btn btn-primary ml-3">
                     <span class="spinner-border spinner-border-sm mr-1" *ngIf="currentMonsterAction === 2"></span>
                     Blast({{gameConfig.max_blast_count - gameSessionObj.monster_current_blast_count}})
                 </button>
-                <button [disabled]="monsterPerformingAction && (gameConfig.max_heal_count - gameSessionObj.monster_current_heal_count <= 0)" class="btn btn-primary ml-3">
+                <button [disabled]="monsterPerformingAction || (gameConfig.max_heal_count - gameSessionObj.monster_current_heal_count <= 0)" class="btn btn-primary ml-3">
                     <span class="spinner-border spinner-border-sm mr-1" *ngIf="currentMonsterAction === 3"></span>
                     Heal({{gameConfig.max_heal_count - gameSessionObj.monster_current_heal_count}})
                 </button>
