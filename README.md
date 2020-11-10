@@ -10,3 +10,4 @@ Steps to deploy locally:
 6. cd path-to-downloaded-folder
 7. npm install
 8. npm start
+9. Game is accessible at http://localhost:3000
