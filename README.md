@@ -1,6 +1,6 @@
 # Covid Slayer Game Front End
 
-Installation Steps:
+Steps to deploy locally:
 
 1. Download the zip file for repository and unzip it
 2. Copy the downloaded folder anywhere
